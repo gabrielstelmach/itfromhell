@@ -1,0 +1,27 @@
+template header
+
+name
+object
+conditional
+action
+
+package drools.templates;
+
+global net.itfromhell.howit.dummy.Product product;
+
+import java.text.SimpleDateFormat;
+import function net.itfromhell.howit.dynamicdrools.util.DroolsUtility.debug;
+
+dialect "java"
+
+template "Product"
+
+rule "@{row.rowNumber} - @{name}"
+when
+    @{object}(@{conditional})
+then
+    product.discount(@{action});
+		debug(drools);
+end
+
+end template
