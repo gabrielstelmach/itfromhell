@@ -13,6 +13,7 @@ Are you looking for a solution to help to you organize your SVN repository and k
 Here is my article about this solution <a href="https://itfromhell.net/2017/10/25/creating-rules-dynamically-with-drools" target="_blank" rel="noopener">Coding SVN hook in Java</a>.<br>
 What is there: Java, SVN, Windows batch file, Log4J, Maven<br>
 <br>
-Please, visit my blog <a href="https://itfromhell.net/2017/10/25/creating-rules-dynamically-with-drools" target="_blank" rel="noopener">www.itfromhell.net</a>.<br>
+Please, visit my blog <a href="https://www.itfromhell.net" target="_blank" rel="noopener">www.itfromhell.net</a>.<br>
 <br>
-Thank you, I hope these codes will be useful!
+Thank you, I hope these codes will be useful!<br>
+Gabriel
