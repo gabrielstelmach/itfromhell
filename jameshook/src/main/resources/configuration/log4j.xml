@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration>
+	<!-- Messages to console -->
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{dd/MM/yyyy HH:mm:ss.SSS} %p [%c{1}]: %C{1}.%M{%L} %m%n" />
+		</layout>
+	</appender>
+  
+	<!-- Messages to file -->
+	<appender name="logFilePreCommit" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="PreCommitHook.log"/>
+		<param name="Append" value="true"/>
+		<param name="MaxFileSize" value="5MB" />
+		<param name="MaxBackupIndex" value="5" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{dd/MM/yyyy HH:mm:ss.SSS} %p [%c{1}]: %C{1}.%M{%L} %m%n" />
+		</layout>
+	</appender>
+  
+	<!-- All application's classes are logged -->
+	<logger name="net.itfromhell.howit.jameshook.precommit">
+		<level value="trace"/>
+	</logger>
+	
+	<root>
+		<priority value="warn"/>
+		<appender-ref ref="logFilePreCommit"/>
+	</root>
+</log4j:configuration>
