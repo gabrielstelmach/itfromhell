@@ -4,7 +4,7 @@
 <h2>Railsdex</h2>
 <h3>railsdex</h3>
 <br>
-Ruby on Rails application showcasing CRUD, API, cloud storage, and diverse implementations using shinning gems. You may start this trail from <a href="https://itfromhell.net/2025/04/09/setting-ruby-on-rails/" target="_blank" rel="noopener">Setting Ruby on Rails</a>.<br>
+Railsdex is a Ruby on Rails application designed to help developers get familiar with setting and starting up a modern Rails development environment while showcasing CRUD, API, cloud storage, and diverse best practices using shining gems in a simple, approachable way. You may start this trail from <a href="https://itfromhell.net/2025/04/09/setting-ruby-on-rails/" target="_blank" rel="noopener">Setting Ruby on Rails</a>.<br>
 What is there: Ruby, Rails, Ruby on Rails<br>
 <br>
 <h2>Dynamic Drools</h2>
