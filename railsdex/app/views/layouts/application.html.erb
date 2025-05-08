@@ -23,6 +23,21 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1>Railsdex</h1>
+      <p>Your Electronic Pokémon Encyclopedia</p>
+    </header>
+
+    <nav>
+      <%= link_to "Home", root_path %>
+    </nav>
+
+    <main>
+      <%= yield %>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Railsdex - Powered by Ruby on Rails and brought to you by <a href="https://itfromhell.net" target="_blank">IT from Hell</a></p>
+    </footer>
   </body>
 </html>
