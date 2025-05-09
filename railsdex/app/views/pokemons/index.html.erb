@@ -1,0 +1,17 @@
+<% content_for :title, "Railsdex - Pokémon collection" %>
+
+<div class="container list-page">
+  <h1>Pokémon collection</h1>
+
+  <ul class="pokemon-list">
+    <% @pokemons.each do |pokemon| %>
+      <li class="pokemon-item">
+        <h3><%= pokemon.name %></h3>
+        <p class="captured-status <%= pokemon.captured ? 'captured' : 'not-captured' %>">
+          <%= pokemon.captured ? 'Captured' : 'Not Captured' %>
+        </p>
+        <p><%= link_to "Show details", pokemon %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>

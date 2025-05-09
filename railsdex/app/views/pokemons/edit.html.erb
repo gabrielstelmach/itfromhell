@@ -1,0 +1,38 @@
+<% content_for :title, "Railsdex - Editing Pokémon" %>
+
+<div class="container form-page">
+  <h1>Editing Pokémon</h1>
+
+  <%= form_with model: @pokemon, local: true do |form| %>
+    <% if @pokemon.errors.any? %>
+      <div class="errors">
+        <h2>Errors</h2>
+        <ul>
+          <% @pokemon.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :name, "Pokémon Name" %>
+      <%= form.text_field :name %>
+    </div>
+    <div class="form-group">
+      <%= form.label :elemental_type_id, "Elemental" %>
+      <%= form.collection_select :elemental_type_id,@elemental_types, :id, :name %>
+    </div>
+    <div class="form-group">
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+    <div class="form-group-checkbox">
+      <%= form.label :captured, "Captured?" %>
+      <%= form.check_box :captured %>
+    </div>
+
+    <%= form.submit "Update Pokémon" %>
+    <%= link_to "Back to details", @pokemon, class: "back-button" %>
+  <% end %>
+</div>

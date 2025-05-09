@@ -1,0 +1,17 @@
+<% content_for :title, "Railsdex - " + @pokemon.name %>
+
+<div class="container details-page">
+  <h2><%= @pokemon.name %></h2>
+
+  <p class="type">Type: <%= @pokemon.elemental_type.name.capitalize %></p>
+  <p class="captured-status <%= @pokemon.captured? ? 'captured' : 'not-captured' %>">
+    <%= @pokemon.captured? ? 'Captured' : 'Not Captured' %>
+  </p>
+  <% if @pokemon.description? %>
+    <p class="description"><%= @pokemon.description %></p>
+  <% end %>
+
+  <%= link_to "Back to List", pokemons_path, class: "back-button" %>
+  <%= link_to "Edit this pokemon", edit_pokemon_path(@pokemon), class: "back-button" %>
+  <%= button_to "Destroy this pokemon", @pokemon, method: :delete %>
+</div>
