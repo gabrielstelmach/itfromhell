@@ -10,6 +10,9 @@
   <% if @pokemon.description? %>
     <p class="description"><%= @pokemon.description %></p>
   <% end %>
+  <% if @pokemon.picture.attached? %>
+    <%= image_tag @pokemon.picture, style: @pokemon.captured? ? "border: 2px solid green;" : "border: 2px solid red;" %>
+  <% end %>
 
   <%= link_to "Back to List", pokemons_path, class: "back-button" %>
   <%= link_to "Edit this pokemon", edit_pokemon_path(@pokemon), class: "back-button" %>

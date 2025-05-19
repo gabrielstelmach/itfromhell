@@ -3,7 +3,7 @@
 <div class="container form-page">
   <h1>Editing Pokémon</h1>
 
-  <%= form_with model: @pokemon, local: true do |form| %>
+  <%= form_with model: @pokemon, local: true, html: { multipart: true } do |form| %>
     <% if @pokemon.errors.any? %>
       <div class="errors">
         <h2>Errors</h2>
@@ -30,6 +30,17 @@
     <div class="form-group-checkbox">
       <%= form.label :captured, "Captured?" %>
       <%= form.check_box :captured %>
+    </div>
+    <div class="file-upload">
+      <% if @pokemon.picture.attached? %>
+        <div class="current-picture">
+          <%= image_tag @pokemon.picture %>
+        </div>
+      <% end %>
+      <%= form.label :picture, (@pokemon.picture.attached? ? "Update" : "Upload") + " the picture" %>
+      <%= form.file_field :picture, id: "pokemon-picture", accept: "image/png,image/jpeg" %>
+      <label for="pokemon-picture" class="custom-file-button"><span>Choose picture</span></label>
+      <span class="file-name">No picture chosen</span>
     </div>
 
     <%= form.submit "Update Pokémon" %>

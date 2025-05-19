@@ -178,6 +178,117 @@ button:active, input[type="submit"]:active {
     transform: scale(0.95);
 }
 
+/* File Upload */
+.file-upload {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0 25px 0;
+}
+
+.file-upload label {
+    font-size: 1rem;
+    color: #3b4cca;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Press Start 2P', Arial, sans-serif;
+}
+
+.file-upload input[type="file"] {
+    display: none; /* Hide default file input */
+}
+
+.file-upload .custom-file-button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1rem;
+    background: #ff4444;
+    color: #ffffff;
+    border: 3px solid #8b98f2;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.file-upload .custom-file-button:hover {
+    background: #3b4cca;
+    border-color: #ffcb05;
+    transform: scale(1.05);
+}
+
+.file-upload .custom-file-button:active {
+    transform: scale(0.95);
+}
+
+.file-upload .custom-file-button:focus {
+    outline: none;
+    border-color: #ffcb05;
+    box-shadow: 0 0 8px rgba(255, 203, 5, 0.5);
+}
+
+.file-upload .custom-file-button::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #ffffff 40%, #ff4444 40%, #ff4444 60%, #ffffff 60%, #000000 65%);
+    border-radius: 50%;
+    top: -25px;
+    left: -25px;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.file-upload .custom-file-button span {
+    position: relative;
+    z-index: 1; /* Ensure text is above the ::before */
+}
+
+.file-upload .file-name {
+    font-size: 0.9rem;
+    color: #2c2c2c;
+    font-family: Arial, sans-serif;
+    margin-top: 5px;
+    padding: 5px 10px;
+    background: #f9f9f9;
+    border: 3px solid #8b98f2;
+    border-radius: 10px;
+    z-index: 1;
+    position: relative;
+}
+
+/* Current picture */
+.current-picture {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.current-picture img {
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border: 3px solid #3b4cca;
+    z-index: 1;
+    position: relative;
+}
+
+.current-picture p {
+  font-size: 1rem;
+  color: #3b4cca;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Press Start 2P', Arial, sans-serif;
+  margin-bottom: 10px;
+}
+
 .captured-status {
     display: inline-block;
     font-size: 0.8rem;
