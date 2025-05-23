@@ -1,3 +1,4 @@
+/* General application */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -19,6 +20,7 @@ nav {
     padding: 1rem;
     background: #e53935;
 }
+
 nav a {
     color: white;
     text-decoration: none;
@@ -38,14 +40,43 @@ footer {
     padding: 1.5rem;
     margin-top: 3rem;
 }
+
 footer a {
     color: white;
     text-decoration: none;
 }
+
 footer a:visited {
     color: white;
 }
 
+/* Container */
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #ffffff 40%, #ff4444 40%, #ff4444 60%, #ffffff 60%, #000000 65%);
+    border-radius: 50%;
+    top: -75px;
+    right: -75px;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/* Homepage */
 .home-background {
     display: block;
     margin-top: -32px;
@@ -53,4 +84,437 @@ footer a:visited {
     margin-left: auto;
     margin-right: auto;
     width: 75%;
+}
+
+/* Form page */
+.form-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-page .back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: #ff4444;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-family: 'Press Start 2P', Arial, sans-serif;
+}
+
+.form-page .back-button:hover {
+    background: #3b4cca;
+    transform: scale(1.05);
+}
+
+.form-page .back-button:active {
+    transform: scale(0.95);
+}
+
+.form-group, .form-group-checkbox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0 25px 0;
+}
+
+.form-group-checkbox {
+    display: inherit;
+}
+
+label {
+    font-size: 1rem;
+    color: #3b4cca;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input, select, textarea {
+    padding: 12px;
+    font-size: 1rem;
+    border: 3px solid #8b98f2;
+    border-radius: 10px;
+    background: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: Arial, sans-serif;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #ffcb05;
+    box-shadow: 0 0 8px rgba(255, 203, 5, 0.5);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button, input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: #ff4444;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-family: 'Press Start 2P', Arial, sans-serif;
+}
+
+button:hover, input[type="submit"]:hover {
+    background: #3b4cca;
+    transform: scale(1.05);
+}
+
+button:active, input[type="submit"]:active {
+    transform: scale(0.95);
+}
+
+/* File Upload */
+.file-upload {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0 25px 0;
+}
+
+.file-upload label {
+    font-size: 1rem;
+    color: #3b4cca;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Press Start 2P', Arial, sans-serif;
+}
+
+.file-upload input[type="file"] {
+    display: none; /* Hide default file input */
+}
+
+.file-upload .custom-file-button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1rem;
+    background: #ff4444;
+    color: #ffffff;
+    border: 3px solid #8b98f2;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.file-upload .custom-file-button:hover {
+    background: #3b4cca;
+    border-color: #ffcb05;
+    transform: scale(1.05);
+}
+
+.file-upload .custom-file-button:active {
+    transform: scale(0.95);
+}
+
+.file-upload .custom-file-button:focus {
+    outline: none;
+    border-color: #ffcb05;
+    box-shadow: 0 0 8px rgba(255, 203, 5, 0.5);
+}
+
+.file-upload .custom-file-button::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #ffffff 40%, #ff4444 40%, #ff4444 60%, #ffffff 60%, #000000 65%);
+    border-radius: 50%;
+    top: -25px;
+    left: -25px;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.file-upload .custom-file-button span {
+    position: relative;
+    z-index: 1; /* Ensure text is above the ::before */
+}
+
+.file-upload .file-name {
+    font-size: 0.9rem;
+    color: #2c2c2c;
+    font-family: Arial, sans-serif;
+    margin-top: 5px;
+    padding: 5px 10px;
+    background: #f9f9f9;
+    border: 3px solid #8b98f2;
+    border-radius: 10px;
+    z-index: 1;
+    position: relative;
+}
+
+/* Current picture */
+.current-picture {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.current-picture img {
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border: 3px solid #3b4cca;
+    z-index: 1;
+    position: relative;
+}
+
+.current-picture p {
+  font-size: 1rem;
+  color: #3b4cca;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Press Start 2P', Arial, sans-serif;
+  margin-bottom: 10px;
+}
+
+.captured-status {
+    display: inline-block;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-family: Arial, sans-serif;
+    z-index: 1;
+    position: relative;
+}
+
+.captured-status.captured {
+    background: #28a745;
+    color: #ffffff;
+}
+
+.captured-status.not-captured {
+    background: #ff4444;
+    color: #ffffff;
+}
+
+/* Errors styling */
+.errors {
+    background: #ffe6e6;
+    border: 3px solid #ff4444;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.errors::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #ffffff 40%, #ff4444 40%, #ff4444 60%, #ffffff 60%, #000000 65%);
+    border-radius: 50%;
+    top: -25px;
+    left: -25px;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.errors h2 {
+    font-size: 1.2rem;
+    color: #ff4444;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px #c44a4a;
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    z-index: 1;
+    position: relative;
+}
+
+.errors ul {
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    position: relative;
+}
+
+.errors li {
+    font-size: 0.9rem;
+    color: #2c2c2c;
+    font-family: Arial, sans-serif;
+    padding: 5px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Page list */
+.list-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pokemon-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.pokemon-item {
+    background: #f9f9f9;
+    border: 3px solid #3b4cca;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pokemon-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.pokemon-item::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #ffffff 40%, #ff4444 40%, #ff4444 60%, #ffffff 60%, #000000 65%);
+    border-radius: 50%;
+    top: -25px;
+    left: -25px;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.pokemon-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+}
+
+.pokemon-item h3 {
+    font-size: 1.2rem;
+    color: #ff4444;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+}
+
+.pokemon-item p {
+    font-size: 0.9rem;
+    color: #2c2c2c;
+    font-family: Arial, sans-serif;
+    z-index: 1;
+    position: relative;
+}
+
+/* Details page */
+.details-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.details-page img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border: 3px solid #3b4cca;
+    border-radius: 10px;
+    background: #f9f9f9;
+    padding: 10px;
+}
+
+.details-page h2 {
+    font-size: 1.8rem;
+    color: #ff4444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px #3b4cca;
+}
+
+.details-page p {
+    font-size: 1rem;
+    color: #2c2c2c;
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+}
+
+.details-page .type {
+    font-weight: bold;
+    color: #8b98f2;
+    text-transform: capitalize;
+}
+
+.details-page .description {
+    background: #f9f9f9;
+    border: 3px solid #8b98f2;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: -25px;
+}
+
+.details-page .back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: #ff4444;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-family: 'Press Start 2P', Arial, sans-serif;
+}
+
+.details-page .back-button:hover {
+    background: #3b4cca;
+    transform: scale(1.05);
+}
+
+.details-page .back-button:active {
+    transform: scale(0.95);
+}
+
+.details-page .captured-status {
+    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.details-page .captured-status.captured {
+    background: #28a745; /* Green for captured */
+    color: #ffffff;
+}
+
+.details-page .captured-status.not-captured {
+    background: #ff4444; /* Red for not captured */
+    color: #ffffff;
 }
