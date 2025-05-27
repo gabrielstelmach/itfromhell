@@ -37,10 +37,16 @@ gem "kamal", require: false
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem "thruster", require: false
 
+# Compatibility with Ruby 3.5.0 and later
+gem 'fiddle'
+
 # Active Storage validation
 gem "active_storage_validations"
 # Amazon S3 adapter
 gem 'aws-sdk-s3', '~> 1.142'
+
+# Support for handling CSV format
+gem "csv"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
