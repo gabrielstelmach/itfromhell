@@ -1,5 +1,5 @@
 <h1>IT From Hell</h1>
-<strong>My particular way for how IT works</strong><br>
+<strong>My particular way of doing IT</strong><br>
 <br>
 <h2>Railsdex</h2>
 <h3>railsdex</h3>
